@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitFlow | Purple Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="sidebar-top">
+                <h1 class="logo">HabitFlow</h1>
+                <ul class="nav-links">
+                    <li class="nav-item active" data-target="dashboard"><span>🏠</span> Dashboard</li>
+                    <li class="nav-item" data-target="analytics"><span>📈</span> Analytics</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button id="login-btn" class="btn-outline">Login</button>
+                <button id="theme-toggle" class="btn-secondary">🌙 Dark Mode</button>
+            </div>
+        </nav>
+
+        <main class="content">
+            <section id="dashboard" class="view active">
+                <div class="view-header">
+                    <div>
+                        <h2>Good Morning!</h2>
+                        <p id="progress-text" class="text-muted">Loading your progress...</p>
+                    </div>
+                    <button class="btn-primary" id="open-modal">+ New Habit</button>
+                </div>
+
+                <div class="progress-wrapper">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div id="habit-list" class="habit-list">
+                    </div>
+            </section>
+
+            <section id="analytics" class="view">
+                <h2>Performance Insights</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Weekly Activity</h3>
+                        <div class="bar-chart" id="weekly-chart"></div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Consistency Heatmap</h3>
+                        <div class="heatmap" id="heatmap"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" data-target="dashboard">🏠</div>
+            <div class="nav-item" data-target="analytics">📈</div>
+            <div id="mobile-add" class="nav-add">+</div>
+        </nav>
+
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="modal">
+                <h3>Create New Habit</h3>
+                <input type="text" id="habit-input" placeholder="E.g., Read 20 mins" autofocus>
+                <div class="modal-buttons">
+                    <button class="btn-secondary" id="close-modal">Cancel</button>
+                    <button class="btn-primary" id="save-habit">Create Habit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
